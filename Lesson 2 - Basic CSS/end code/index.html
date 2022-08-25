@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- MOST IMPORTANT CSS PROPERTIES! (& INLINE CSS) -->
+
+
+    <!-- 1. DISPLAY -->
+
+    <!-- <span>
+        span
+    </span>
+    <div>
+        div
+    </div> -->
+    <!--
+        What do you notice?
+        div is given the display type block.
+    -->
+
+    <!-- What if we do the same to span? -->
+    <!-- <span style="display: block">
+        span w/ display: block
+    </span> -->
+    <!--
+        Now, what is the difference between this span and div?
+        The answer: Nothing! This span now functions like a div.
+    -->
+
+    <!-- How can we make a div act as a span? -->
+    <!-- <div style="display: inline">
+        div w/ display: inline
+    </div> -->
+
+
+    <!-- 2. POSITION -->
+
+    <!-- <span>
+        <img src="monke.jfif">
+    </span> -->
+
+    <!-- Place element wherever we want. -->
+    <!-- <span style="position: absolute; left: 0; top: 0">
+        <img src="monke.jfif">
+    </span> -->
+
+
+    <!-- 3. WIDTH & HEIGHT -->
+
+    <!--
+        Width here has no effect. Why?
+        Width and height do not apply to elements with display: inline.
+    -->
+    <!-- <span style="width: 100px; height: 200px">
+        text
+    </span> -->
+
+    <!--
+        Width an height only apply to display: block and inline-block
+        Div is display: block, so it does work
+    -->
+    <!-- <div style="width: 100px; height: 200px">
+        text
+    </div> -->
+
+
+    <!-- 4. PADDING & BORDER & BACKGROUND -->
+
+    <!--
+        Note how increasing the padding adds space within
+        the border of element.
+    -->
+    <!-- <span
+        style="
+            border: 5px solid black;
+            padding: 10px;
+            background: green
+        "
+    >
+        text
+    </span> -->
+
+
+    <!-- 5. MARGIN -->
+
+    <!--
+        Display: inline cuts off the top and bottom of margins to the line.
+    -->
+    <!-- <span
+        style="margin: 10px;"
+    >
+        text
+    </span> -->
+
+    <!--
+        Display: block does not cut off margin.
+    -->
+    <!-- <div
+        style="margin: 10px;"
+    >
+        text
+    </div> -->
+
+    <!-- 6. FONT + COLOR (text styling) -->
+
+    <!--
+        These styles also apply to elements within it.
+        They can be said to be inherited styles.
+        (BTW, this puts the Cascading in Cascading Style Sheets.)
+    -->
+    <!-- <span
+        style="
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            color: red
+        "
+    >
+        parent
+        <span>
+            child
+        </span>
+    </span> -->
+
+
+
+    <!-- INTERNAL CSS -->
+
+    <!--
+        In internal CSS, style is defined within the style tag.
+        The enclosed content of this element is literally CSS.
+        NOTE: It is best to have this inside the head.
+    -->
+    <!-- <style>
+        * {
+            color: red;
+        }
+    </style> -->
+
+    <!--
+        Note:
+        The * selector applies to all elements (visible or not) at all levels.
+        It is, by far, the most powerful CSS selector.
+    -->
+    <!-- <span>
+        some text
+        <span>
+            child text
+        </span>
+    </span> -->
+
+
+
+    <!-- EXTERNAL CSS -->
+
+    <!-- 
+        In External CSS, style is defined in a separate .CSS file,
+        then linked to our HTML via the link tag.
+        NOTE: This should also, very much, be in the head.
+    -->
+    <!-- <link rel="stylesheet" href="style.css">
+
+    <span>
+        text
+    </span> -->
+</body>
+</html>
