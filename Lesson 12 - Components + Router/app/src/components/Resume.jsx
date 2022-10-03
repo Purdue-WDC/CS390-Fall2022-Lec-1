@@ -1,17 +1,24 @@
 import React from 'react'
+import Section from './Section'
 
 const Resume = () => {
-    const name = "Item 1"
-    const description = "This is a description of item 1."
-    const score = "Score: 10/10"
-
     return (
         <div>
-            <div style={{ margin: '10px 0' }}>
-                <div>{name}</div>
-                <div>{description}</div>
-                <div>{score}</div>
-            </div>
+            <Section
+                name={"Item 1"}
+                description={"This is a description of item 1."}
+                score={"Score: 10/10"}
+            />
+            <Section
+                name={"Item 2"}
+                description={"This is a description of item 1."}
+                score={"Score: 10/10"}
+            />
+            <Section
+                name={"Item 3"}
+                description={"This is a description of item 1."}
+                score={"Score: 10/10"}
+            />
         </div>
     )
 }
