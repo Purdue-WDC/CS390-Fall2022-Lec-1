@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home'
 import Resume from './components/Resume';
-import { Routes, Route, Link, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom'
+import User from './components/User';
 
 
 const About = (props) => {
@@ -26,7 +27,6 @@ const About = (props) => {
       </div>
       <Outlet/>
     </div>
-    
   )
 }
 const Contact = () => <div>Contact</div>
@@ -34,7 +34,8 @@ const Founding = () => <div>Founding</div>
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+      {/* NAVBAR */}
       <div style={{
         display: 'flex',
         justifyContent: 'space-between'
@@ -48,9 +49,16 @@ function App() {
         <Link to='/about'>
           About
         </Link>
+        <Link to='/user/user1'>
+          User1
+        </Link>
+        <Link to='/user/user2'>
+          User2
+        </Link>
       </div>
 
       <Routes>
+        {/* BASIC ROUTES */}
         <Route
           path="home"
           element={<Home/>}
@@ -60,14 +68,28 @@ function App() {
           element={<Resume/>}
         />
         
-        <Route path="about" element={<About/>} >				// route: /about
-          <Route path="contact" element={<Contact/>} />		// route: /about/contact
-          <Route path="founding" element={<Founding/>} />	// route: /about/founding
+        {/* NESTED ROUTING */}
+        <Route
+          path="about"
+          element={<About/>} // route: /about
+        >
+          <Route
+            path="contact"
+            element={<Contact/>} // route: /about/contact
+          />
+          <Route
+            path="founding"
+            element={<Founding/>} // route: /about/founding
+          />
         </Route>
-
-
+        
+        {/* DYNAMIC SEGMENTS */}
+        <Route
+          path="user/:userId"
+          element={<User/>} // route: /about
+        />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 
