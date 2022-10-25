@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
+import App, { CounterContext } from 'app';
 import Home from './components/Home'
 import Resume from './components/Resume';
 import User from './components/User';
